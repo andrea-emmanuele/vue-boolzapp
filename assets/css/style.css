@@ -1,6 +1,255 @@
+@font-face {
+    font-family: 'Segoe UI Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Segoe UI Regular'), url('../fonts/segoe-ui.woff') format('woff');
+}
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+    /*scrollbar-color: rgba(0,0,0,.2) hsla(0,0%,100%,.1);
+    scrollbar-width: thin;*/
 }
 
+body {
+    background-color: #dddbd1;
+    background-image: linear-gradient(180deg, #dddbd1, #d2dbdc);
+}
+
+/*region root*/
+
+section#root {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section#root:after {
+    position: absolute;
+    top: 0;
+    content: "";
+    background: #009688;
+    width: 100%;
+    height: 13.1vh;
+    display: block;
+    z-index: -1;
+}
+
+section#root > aside,
+section#root > main {
+    background: #fff;
+    height: 96vh;
+}
+
+section#root > aside {
+    background: #fff;
+    flex: 0 0 22%;
+}
+
+section#root > main {
+    flex: 0 0 51%;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid #e4e5e6;
+}
+
+section#root aside > header,
+section#root main > header {
+    height: 60px;
+    background: #ededed;
+}
+
+/*endregion*/
+
+/*region aside*/
+
+aside > header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.4rem 0 .5rem;
+}
+
+aside header > .my-photo {
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+aside header .my-photo > img {
+    width: 85%;
+    clip-path: circle();
+    cursor: pointer;
+}
+
+aside header > .actions {
+    color: #919191;
+    width: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+aside header .actions > span {
+    height: 22px;
+    display: block;
+    cursor: pointer;
+}
+
+/*alerts*/
+aside > .alerts {
+    background: #9de1fe;
+    display: flex;
+    align-items: center;
+    padding: 1.2rem .7rem;
+}
+
+aside .alerts > span {
+    color: #fff;
+}
+
+aside .alerts > .inner-alerts {
+    color:#3e4142;
+    margin-left: .8rem;
+}
+
+aside .alerts .inner-alerts > .active-alerts {
+    font-size: .85rem;
+
+    display: flex;
+    align-items: center;
+    margin-top: .1rem;
+    cursor: pointer;
+}
+
+aside .alerts .inner-alerts > .active-alerts > span {
+    color: #404b4f;
+}
+
+aside .alerts .inner-alerts > .active-alerts > span.active:hover {
+    text-decoration: underline;
+}
+
+aside .alerts .inner-alerts .active-alerts > span.caret {
+    height: 13px;
+    margin-left: .15rem;
+}
+
+/*search chats*/
+aside .search-chats {
+    position: relative;
+    background: #f6f6f6;
+    height: 5.5vh;
+    border-bottom: 1px solid #ebebeb;
+}
+
+aside .search-chats > span {
+    position: absolute;
+    top: 50%;
+    left: 6%;
+    transform: translateY(calc(50% - 1.7rem));
+    color: #a4a4a4;
+    z-index: 1;
+}
+
+aside .search-chats > input {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    padding: .6rem .6rem .6rem 3.7rem;
+    border: none;
+    border-radius: 1.2rem;
+    outline: none;
+    transition: width 35ms linear;
+}
+
+aside .search-chats > input::placeholder {
+    font-size: .9rem;
+    color: #a4a4a4;
+    opacity: 1;
+}
+
+aside .search-chats > input:focus {
+    width: 100%;
+    height: 100%;
+    padding-left: 4.4rem;
+    border-radius: 0;
+}
+
+aside .search-chats > input:focus::placeholder {
+    opacity: 0;
+}
+
+/*endregion*/
+
+/*region main*/
+
+main > .inner-welcome {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    border-bottom: 7px solid #4adf83;
+}
+
+main .inner-welcome > .intro {
+    font-size: .9rem;
+    color: #888989;
+    width: 50%;
+    text-align: center;
+    padding-top: 11rem;
+}
+
+main .inner-welcome .intro > .intro-connection-light {
+    background: url("../img/intro-connection-light.jpg") no-repeat center center;
+    background-size: contain;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+main .inner-welcome .intro > .welcome-message {
+    margin-top: 1.7rem;
+}
+
+main .inner-welcome .intro .welcome-message > h1 {
+    font-size: 2.3rem;
+    font-weight: 300;
+    color: #525252;
+    margin-bottom: 1rem;
+}
+
+main .inner-welcome .intro .welcome-message > p {
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+main .inner-welcome .intro > .download-app {
+    width: 95%;
+    padding: 2.3rem 0;
+    border-top: 1px solid #e5e6e6;
+    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .inner-welcome .intro .download-app > span.pc {
+    height: 16px;
+    margin-right: .3rem;
+}
+
+main .inner-welcome .intro .download-app a {
+    color: #25c461;
+    text-decoration: none;
+}
+
+/*endregion*/
