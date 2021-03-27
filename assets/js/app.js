@@ -1,7 +1,8 @@
 new Vue({
     el: "#root",
     data: {
-        onChat: false
+        onChat: false,
+        contacts: contacts
     },
     methods: {
         showWelcome: function () {
