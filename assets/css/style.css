@@ -39,26 +39,32 @@ section#root:after {
     z-index: -1;
 }
 
-section#root > aside,
-section#root > main {
+section#root > .content {
+    width: 73%;
+    display: flex;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0,.06), 0 2px 5px 0 rgba(0, 0, 0,.2);
+}
+
+section#root .content > aside,
+section#root .content > main {
     background: #fff;
     height: 96vh;
 }
 
-section#root > aside {
+section#root .content > aside {
     background: #fff;
-    flex: 0 0 22%;
+    flex: 0 0 30%;
 }
 
-section#root > main {
-    flex: 0 0 51%;
+section#root .content > main {
+    flex: 0 0 70%;
     display: flex;
     flex-direction: column;
     border-left: 1px solid #e4e5e6;
 }
 
-section#root aside > header,
-section#root main > header {
+section#root .content aside > header,
+section#root .content main > header {
     height: 60px;
     background: #ededed;
 }
@@ -181,6 +187,7 @@ aside .search-chats > input:focus {
     height: 100%;
     padding-left: 4.4rem;
     border-radius: 0;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.08);
 }
 
 aside .search-chats > input:focus::placeholder {
@@ -196,6 +203,7 @@ main > .inner-welcome {
     height: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
     border-bottom: 7px solid #4adf83;
 }
 
@@ -204,7 +212,7 @@ main .inner-welcome > .intro {
     color: #888989;
     width: 50%;
     text-align: center;
-    padding-top: 11rem;
+    margin-top: 3rem;
 }
 
 main .inner-welcome .intro > .intro-connection-light {

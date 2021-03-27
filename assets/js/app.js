@@ -6,7 +6,7 @@ new Vue({
     methods: {
         showWelcome: function () {
             if (!this.onChat) {
-                let main = document.querySelector("section#root > main");
+                let main = document.querySelector(".content > main");
                 main.style.borderLeft = "1px solid #4adf83";
             }
         }
