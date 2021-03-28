@@ -213,6 +213,10 @@ aside #chats > .chat:hover {
     background: #f5f5f5;
 }
 
+aside #chats > .chat.active {
+    background: #ebebeb;
+}
+
 aside #chats .chat .inner-chat {
     display: flex;
     justify-content: flex-start;
@@ -255,6 +259,7 @@ aside #chats .chat > span.time {
 
 /*region main*/
 
+/*region inner welcome*/
 main > .inner-welcome {
     width: 100%;
     height: 100%;
@@ -316,12 +321,24 @@ main .inner-welcome .intro .download-app a {
     color: #25c461;
     text-decoration: none;
 }
+/*endregion*/
+
+/*region chat*/
+main .chat-messages {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
 
 main header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 1.4rem 0 .5rem;
+}
+
+main header > .inner-header {
+    display: flex;
 }
 
 main header .inner-header > .user-photo {
@@ -331,10 +348,93 @@ main header .inner-header > .user-photo {
     align-items: center;
 }
 
-main header .user-photo > img {
+main header .inner-header .user-photo > img {
     width: 85%;
     clip-path: circle();
     cursor: pointer;
 }
+
+main header .inner-header > span {
+    margin-top: 0.2rem;
+    margin-left: .6rem;
+}
+
+main header > .actions {
+    color: #919191;
+    width: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main header .actions > span {
+    height: 20px;
+    cursor: pointer;
+}
+
+main header .actions > span.search {
+    height: 27px;
+}
+
+/*body*/
+main .body {
+    height: calc(100% - 60px);
+    background: url("../img/mine.jpg") repeat;
+    display: flex;
+    flex-direction: column;
+    padding: .5rem 6rem;
+}
+
+main .body > .received,
+main .body > .sent {
+    position: relative;
+    font-size: .85rem;
+    background: #fff;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: .5rem;
+    margin-bottom: .1rem;
+    box-shadow: 0 1px .5px rgba(0, 0, 0, .13);
+}
+
+main .body > .received {
+    border-radius: 0 5px 5px 5px;
+}
+
+main .body > .sent {
+    background: #dcf8c6;
+    align-self: flex-end;
+    border-radius: 5px 0 5px 5px;
+}
+
+main .body .arrow {
+    position: absolute;
+    top: -2px;
+    color: #fff;
+}
+
+main .body .arrow > svg{
+    height: 13px;
+    width: 8px;
+}
+
+main .body > .received > .arrow {
+    left: -8px;
+}
+
+main .body > .sent > .arrow {
+    right: -8px;
+    color: #dcf8c6;
+    transform: rotateY(180deg);
+}
+
+main .body span.time {
+    position: relative;
+    bottom: -5px;
+    font-size: .7rem;
+    color: #8c8c8c;
+    margin-left: 1rem;
+}
+/*endregion*/
 
 /*endregion*/
