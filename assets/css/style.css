@@ -64,7 +64,7 @@ section#root .content > main {
 }
 
 section#root .content aside > header,
-section#root .content main > header {
+section#root .content main header {
     height: 60px;
     background: #ededed;
 }
@@ -72,6 +72,11 @@ section#root .content main > header {
 /*endregion*/
 
 /*region aside*/
+
+aside {
+    display: flex;
+    flex-direction: column;
+}
 
 aside > header {
     display: flex;
@@ -126,7 +131,6 @@ aside .alerts > .inner-alerts {
 
 aside .alerts .inner-alerts > .active-alerts {
     font-size: .85rem;
-
     display: flex;
     align-items: center;
     margin-top: .1rem;
@@ -150,7 +154,7 @@ aside .alerts .inner-alerts .active-alerts > span.caret {
 aside .search-chats {
     position: relative;
     background: #f6f6f6;
-    height: 5.5vh;
+    padding: 1.5rem;
     border-bottom: 1px solid #ebebeb;
 }
 
@@ -192,6 +196,59 @@ aside .search-chats > input:focus {
 
 aside .search-chats > input:focus::placeholder {
     opacity: 0;
+}
+
+/*chats*/
+aside #chats > .chat {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f2f2f2;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+aside #chats > .chat:hover {
+    background: #f5f5f5;
+}
+
+aside #chats .chat .inner-chat {
+    display: flex;
+    justify-content: flex-start;
+}
+
+aside #chats .chat .inner-chat > .user-photo {
+    padding: 0 .8rem;
+}
+
+aside #chats .chat .inner-chat .user-photo > img {
+    clip-path: circle();
+    width: 50px;
+}
+
+aside #chats .chat .inner-chat > .inner-data {
+    display: flex;
+    flex-direction: column;
+    padding: .3rem 0;
+}
+
+aside #chats .chat .inner-chat .inner-data > span.message {
+    font-size: .9rem;
+    color: #818181;
+    width: 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: .2rem;
+}
+
+aside #chats .chat > span.time {
+    font-size: 0.75rem;
+    color: #8c8c8c;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    align-self: flex-start;
 }
 
 /*endregion*/
@@ -258,6 +315,26 @@ main .inner-welcome .intro .download-app > span.pc {
 main .inner-welcome .intro .download-app a {
     color: #25c461;
     text-decoration: none;
+}
+
+main header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.4rem 0 .5rem;
+}
+
+main header .inner-header > .user-photo {
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main header .user-photo > img {
+    width: 85%;
+    clip-path: circle();
+    cursor: pointer;
 }
 
 /*endregion*/
