@@ -69,8 +69,6 @@ section#root .content main header {
     background: #ededed;
 }
 
-/*endregion*/
-
 /*region aside*/
 
 aside {
@@ -378,11 +376,12 @@ main header .actions > span.search {
 
 /*body*/
 main .body {
-    height: calc(100% - 60px);
+    height: calc(100% - 60px - 62px);
     background: url("../img/mine.jpg") repeat;
     display: flex;
     flex-direction: column;
     padding: .5rem 6rem;
+    overflow-y: scroll;
 }
 
 main .body > .received,
@@ -395,6 +394,11 @@ main .body > .sent {
     padding: .5rem;
     margin-bottom: .1rem;
     box-shadow: 0 1px .5px rgba(0, 0, 0, .13);
+}
+
+main .body > .received:last-of-type,
+main .body > .sent:last-of-type {
+    margin-bottom: 2rem;
 }
 
 main .body > .received {
@@ -435,6 +439,54 @@ main .body span.time {
     color: #8c8c8c;
     margin-left: 1rem;
 }
+
+/*footer*/
+main footer {
+    color: #919191;
+    background: #f0f0f0;
+    height: 62px;
+    display: flex;
+    align-items: stretch;
+}
+
+main footer > .actions {
+    flex: 0 0 11%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+main footer .actions > span {
+    height: 24px;
+    cursor: pointer;
+}
+
+main footer > .send-message {
+    flex: 0 0 89%;
+    display: flex;
+    align-items: center;
+}
+
+main footer .send-message > input[type="text"] {
+    flex: 0 0 92%;
+    font-size: 1rem;
+    color: #4a4a4a;
+    height: 70%;
+    padding: 0 1rem;
+    border: none;
+    border-radius: 2rem;
+    outline: none;
+}
+
+main footer .send-message > .actions {
+    flex: 0 0 8%;
+    display: flex;
+    justify-content: center;
+}
+
 /*endregion*/
 
 /*endregion*/
+
+/*endregion*/
+
