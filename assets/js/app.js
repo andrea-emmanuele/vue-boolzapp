@@ -3,7 +3,8 @@ new Vue({
     data: {
         message: null,
         sent: false,
-        onChat: 0,
+        onChat: null,
+        contactName: null,
         contacts: contacts,
         status: function (message) {
             return {
@@ -47,6 +48,12 @@ new Vue({
                 }, 1000);
                 this.sent = false;
             }
+        },
+        searching: function (key, val) {
+            if (val)
+                return key.toLowerCase().includes(val.toLowerCase());
+            else
+                return true;
         }
     },
     created: function () {
@@ -55,7 +62,7 @@ new Vue({
     updated: function () {
         this.showWelcome();
         this.received();
-    }
+    },
 });
 
 function getMessage(message, status) {

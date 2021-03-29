@@ -10,8 +10,8 @@
     margin: 0;
     box-sizing: border-box;
     font-family: "Segoe UI", sans-serif;
-    /*scrollbar-color: rgba(0,0,0,.2) hsla(0,0%,100%,.1);
-    scrollbar-width: thin;*/
+    scrollbar-color: rgba(0,0,0,.2) hsla(0,0%,100%,.1);
+    scrollbar-width: thin;
 }
 
 body {
@@ -197,6 +197,11 @@ aside .search-chats > input:focus::placeholder {
 }
 
 /*chats*/
+aside #chats {
+    height: calc(100% - 198px);
+    overflow-y: scroll;
+}
+
 aside #chats > .chat {
     height: 70px;
     display: flex;

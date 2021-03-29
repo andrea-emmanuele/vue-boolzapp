@@ -76,7 +76,7 @@ let contacts = [
 	},
 	{
 		name: 'Luisa',
-		avatar: '_4',
+		avatar: '_6',
 		visible: true,
 		messages: [
 			{
@@ -92,6 +92,6 @@ let contacts = [
 				status: 'received'
 			}
 		],
-	},
+	}
 ]
 

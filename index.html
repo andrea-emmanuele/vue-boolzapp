@@ -57,10 +57,10 @@
                                 fill="currentColor"
                                 d="M15.009 13.805h-.636l-.22-.219a5.184 5.184 0 0 0 1.256-3.386 5.207 5.207 0 1 0-5.207 5.208 5.183 5.183 0 0 0 3.385-1.255l.221.22v.635l4.004 3.999 1.194-1.195-3.997-4.007zm-4.808 0a3.605 3.605 0 1 1 0-7.21 3.605 3.605 0 0 1 0 7.21z"></path></svg>
                     </span>
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input v-model="contactName" type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
                     <section id="chats">
-                        <div class="chat" v-for="(contact, i) in contacts" :class="isActive(i)" @click="onChat=i">
+                        <div class="chat" v-for="(contact, i) in contacts" v-if="searching(contact.name, contactName)" :class="isActive(i)"  @click="onChat=i">
                             <div class="inner-chat">
                                 <div class="user-photo">
                                     <img :src="'./assets/img/avatar' + contact.avatar + '.jpg'" :alt="'avatar' + contact.avatar">
@@ -115,7 +115,7 @@
                             </div>
                         </header>
                         <section class="body">
-                            <div v-for="(message) in contacts[onChat].messages" :class="status(message)">
+                            <div v-for="message in contacts[onChat].messages" :class="status(message)">
                                 <span class="arrow">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 13"><path opacity=".13" fill="#0000000" d="M1.533 3.568L8 12.193V1H2.812C1.042 1 .474 2.156 1.533 3.568z"></path><path fill="currentColor" d="M1.533 2.568L8 11.193V0H2.812C1.042 0 .474 1.156 1.533 2.568z"></path></svg>
                                 </span>
