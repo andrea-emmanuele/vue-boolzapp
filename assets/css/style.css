@@ -22,6 +22,7 @@ body {
 /*region root*/
 
 section#root {
+    position: relative;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -240,7 +241,7 @@ aside #chats .chat .inner-chat > .inner-data {
     padding: .3rem 0;
 }
 
-aside #chats .chat .inner-chat .inner-data > span.message {
+aside #chats .chat .inner-chat .inner-data span.message {
     font-size: .9rem;
     color: #818181;
     width: 250px;
@@ -399,6 +400,7 @@ main .body > .sent {
     padding: .5rem;
     margin-bottom: .1rem;
     box-shadow: 0 1px .5px rgba(0, 0, 0, .13);
+    display: flex;
 }
 
 main .body > .received:last-of-type,
@@ -437,12 +439,50 @@ main .body > .sent > .arrow {
     transform: rotateY(180deg);
 }
 
+span.deleted {
+    color: #8fa181;
+    height: 18px;
+}
+
+main .body .message.deleted {
+    font-style: italic;
+    color: #8fa181;
+}
+
+main .body .actions {
+    margin-left: 2rem;
+    margin-right: .4rem;
+}
+
 main .body span.time {
     position: relative;
-    bottom: -5px;
+    bottom: -8px;
+    width: 20px;
+    height: 10px;
     font-size: .7rem;
     color: #8c8c8c;
-    margin-left: 1rem;
+    display: block;
+}
+
+main .body span.caret-down {
+    position: relative;
+    top: -1px;
+    right: -10px;
+    color: #c2c2c2;
+    width: 20px;
+    height: 10px;
+    display: block;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: absolute;
+    background: #fff;
+    padding: .5rem 0;
+}
+
+.dropdown-item {
+    padding: .5rem 1rem;
 }
 
 /*footer*/

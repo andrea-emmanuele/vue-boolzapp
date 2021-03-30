@@ -16,6 +16,15 @@ new Vue({
             return {
                 active: i === this.onChat
             }
+        },
+        onMessage: null,
+        onClick: false,
+        y: 600,
+        x: 200,
+        isDeleted: function (message) {
+            return {
+                deleted: message.deleted
+            }
         }
     },
     methods: {
@@ -54,6 +63,29 @@ new Vue({
                 return key.toLowerCase().includes(val.toLowerCase());
             else
                 return true;
+        },
+        mouseenter: function (i) {
+            this.onMessage = i;
+        },
+        mouseleave: function () {
+            if (!this.onClick)
+                this.onMessage = null;
+        },
+        open: function (event) {
+            this.y = event.clientY;
+            this.x = event.clientX;
+            this.onClick = !this.onClick;
+        },
+        close: function () {
+            if (this.onClick) {
+                this.onClick = false;
+                this.onMessage = false;
+            }
+        },
+        remove: function () {
+            this.contacts[this.onChat].messages[this.onMessage].text = "Hai eliminato questo messaggio.";
+            this.contacts[this.onChat].messages[this.onMessage].deleted = true;
+            this.close();
         }
     },
     created: function () {
