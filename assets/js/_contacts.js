@@ -45,7 +45,7 @@ let contacts = [
 				deleted: false
 			},
 			{
-				date: '20/03/2020',
+				date: '22/03/2020',
 				time: '16:35',
 				text: 'Mi piacerebbe ma devo andare a fare la spesa.',
 				status: 'sent',
@@ -72,7 +72,7 @@ let contacts = [
 				deleted: false
 			},
 			{
-				date: '28/03/2020',
+				date: '30/03/2020',
 				time: '16:15',
 				text: 'Ah scusa!',
 				status: 'received',
@@ -93,7 +93,7 @@ let contacts = [
 				deleted: false
 			},
 			{
-				date: '10/01/2020',
+				date: '11/01/2020',
 				time: '15:50',
 				text: 'Si, ma preferirei andare al cinema',
 				status: 'received',

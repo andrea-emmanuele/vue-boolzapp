@@ -1,0 +1,214 @@
+* {
+    scrollbar-color: hsla(0,0%,100%,.16) transparent;
+    scrollbar-width: thin;
+}
+
+body {
+    background-color: #090e11;
+}
+
+/*region root*/
+
+section#root .content > main {
+    border-left: 1px solid #3c4346;
+}
+
+section#root .content aside > header,
+section#root .content main header {
+    background: #2a2f32;
+}
+
+/*region aside*/
+
+aside header .actions > span {
+    color: #b1b3b5;
+}
+
+/*alerts*/
+aside > .alerts {
+    background: #2a3c46;
+}
+
+aside .alerts > span {
+    color: #cee4e8;
+}
+
+aside .alerts > .inner-alerts {
+    color: #d8d9db;
+}
+
+aside .alerts .inner-alerts > .active-alerts > span {
+    color: #00af9c;
+}
+
+/*search chats*/
+aside .search-chats {
+    background: #131c21;
+    border-bottom: 1px solid #242d32;
+}
+
+aside .search-chats > input {
+    color: #858789;
+    background: #323739;
+}
+
+/*chats*/
+aside #chats {
+    background: #131c21;
+}
+
+aside #chats > .chat {
+    border-bottom: 1px solid #30383d;
+}
+
+aside #chats > .chat:hover {
+    background: #2d3134;
+}
+
+aside #chats > .chat.active {
+    background: #323739;
+}
+
+aside #chats .chat .inner-chat > .inner-data {
+    color: #e2e2e3;
+}
+
+aside #chats .chat .inner-chat .inner-data span.message {
+    color: #9ea1a4;
+}
+
+/*endregion*/
+
+/*region main*/
+
+/*region inner welcome*/
+main > .inner-welcome {
+    background: #262d31;
+    border-bottom: 7px solid #056162;
+}
+
+main .inner-welcome .intro > .intro-connection-light {
+    background: url("../img/dark/intro-connection-dark.jpg") no-repeat center center;
+}
+
+main .inner-welcome .intro .welcome-message > h1 {
+    color: #d8d9db;
+}
+
+main .inner-welcome .intro .welcome-message > p {
+    color: #a6a8aa;
+}
+
+main .inner-welcome .intro > .download-app {
+    color: #a6a8aa;
+    border-top: 1px solid #3d4347;
+}
+
+main .inner-welcome .intro .download-app a {
+    color: #00af9c;
+}
+/*endregion*/
+
+/*region chat*/
+
+main header .inner-header > span {
+    color: #e2e2e3;
+}
+
+/*body*/
+main .body {
+    position: relative;
+    background: #111;
+}
+
+main .body > .dark-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url("../img/dark-bg.png") repeat;
+    width: 100%;
+    height: 100%;
+    opacity: 0.06;
+    display: flex;
+}
+
+main .body > .received,
+main .body > .sent {
+    color: #ebebeb;
+    background: #262d31;
+}
+
+main .body > .sent {
+    background: #056162;
+}
+
+main .body .arrow {
+    color: #262d31;
+}
+
+main .body > .sent > .arrow {
+    color: #056162;
+}
+
+span.deleted {
+    color: #aaacae;
+}
+
+main .body .message.deleted {
+    color: #6fa2a2;
+}
+
+/*footer*/
+main footer {
+    color: #828689;
+    background: #1e2428;
+}
+
+main footer .send-message > input[type="text"] {
+    background: #33383b;
+    color: #858789;
+}
+
+/*endregion*/
+
+/*endregion*/
+
+/*endregion*/
+
+/*region animations*/
+
+#moon {
+   opacity: 0;
+}
+
+@keyframes showing {
+    0% {
+        opacity: 0;
+        transform: scale(0, 0);
+    }
+    50% {
+        transform: scale(1.1, 1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}
+
+@keyframes hiding {
+    0% {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+    50% {
+        transform: scale(1.1, 1.1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0, 0);
+    }
+}
+
+
+/*endregion*/
+

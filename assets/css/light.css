@@ -1,0 +1,184 @@
+* {
+    scrollbar-color: rgba(0,0,0,.2) hsla(0,0%,100%,.1);
+    scrollbar-width: thin;
+}
+
+body {
+    background-color: #dddbd1;
+    background-image: linear-gradient(180deg, #dddbd1, #d2dbdc);
+}
+
+/*region root*/
+
+section#root:after {
+    position: absolute;
+    top: 0;
+    content: "";
+    background: #009688;
+    width: 100%;
+    height: 13.1vh;
+    display: block;
+    z-index: -1;
+}
+
+section#root .content > main {
+    border-left: 1px solid #e4e5e6;
+}
+
+section#root .content aside > header,
+section#root .content main header {
+    background: #ededed;
+}
+
+/*region aside*/
+
+/*alerts*/
+aside > .alerts {
+    background: #9de1fe;
+}
+
+aside .alerts > span {
+    color: #fff;
+}
+
+aside .alerts > .inner-alerts {
+    color:#3e4142;
+}
+
+aside .alerts .inner-alerts > .active-alerts > span {
+    color: #404b4f;
+}
+
+/*search chats*/
+aside .search-chats {
+    background: #f6f6f6;
+    border-bottom: 1px solid #ebebeb;
+}
+
+/*chats*/
+
+aside #chats > .chat {
+    border-bottom: 1px solid #f2f2f2;
+}
+
+aside #chats > .chat:hover {
+    background: #f5f5f5;
+}
+
+aside #chats > .chat.active {
+    background: #ebebeb;
+}
+
+aside #chats .chat .inner-chat .inner-data span.message {
+    color: #818181;
+}
+
+/*endregion*/
+
+/*region main*/
+
+/*region inner welcome*/
+main > .inner-welcome {
+    border-bottom: 7px solid #4adf83;
+}
+
+main .inner-welcome .intro > .intro-connection-light {
+    background: url("../img/intro-connection-light.jpg") no-repeat center center;
+}
+
+main .inner-welcome .intro .welcome-message > h1 {
+    color: #525252;
+}
+
+main .inner-welcome .intro > .download-app {
+    border-top: 1px solid #e5e6e6;
+}
+
+main .inner-welcome .intro .download-app a {
+    color: #25c461;
+}
+/*endregion*/
+
+/*region chat*/
+
+/*body*/
+main .body {
+    background: url("../img/mine.jpg") repeat;
+}
+
+main .body > .received,
+main .body > .sent {
+    background: #fff;
+}
+
+main .body > .sent {
+    background: #dcf8c6;
+}
+
+main .body .arrow {
+    color: #fff;
+}
+
+main .body > .sent > .arrow {
+    color: #dcf8c6;
+}
+
+span.deleted {
+    color: #8fa181;
+}
+
+main .body .message.deleted {
+    color: #8fa181;
+}
+
+/*footer*/
+main footer {
+    color: #919191;
+    background: #f0f0f0;
+}
+
+main footer .send-message > input[type="text"] {
+    color: #4a4a4a;
+}
+
+/*endregion*/
+
+/*endregion*/
+
+/*endregion*/
+
+/*region animations*/
+
+#sun {
+    opacity: 0;
+}
+
+@keyframes showing {
+    0% {
+        opacity: 0;
+        transform: scale(0, 0);
+    }
+    50% {
+        transform: scale(1.1, 1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}
+
+@keyframes hiding {
+    0% {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+    50% {
+        transform: scale(1.1, 1.1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0, 0);
+    }
+}
+
+/*endregion*/

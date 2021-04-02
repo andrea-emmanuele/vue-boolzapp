@@ -1,6 +1,7 @@
 new Vue({
     el: "#root",
     data: {
+        darkMode: false,
         message: null,
         sent: false,
         onChat: null,
@@ -28,14 +29,54 @@ new Vue({
         }
     },
     methods: {
+        switchMode: function () {
+            let content = document.querySelector(".content");
+
+            let moon = document.getElementById("moon");
+            let sun = document.getElementById("sun");
+
+            let link = document.querySelector("head link#style");
+            let darkPath = "./assets/css/dark.css";
+            let lightPath = "./assets/css/light.css";
+
+            let main = document.querySelector(".content > main");
+
+            if (this.darkMode) {
+                content.style.animation = "showing_light 300ms linear";
+
+                sun.style.animation = "hiding 500ms linear forwards";
+                moon.style.animation = "showing 500ms linear forwards";
+                link.setAttribute("href", lightPath);
+
+                if (this.onChat == null) {
+                    main.style.borderLeft = "1px solid #4adf83";
+                } else {
+                    main.style.borderLeft = "1px solid #e4e5e6";
+                }
+            }
+            if (!this.darkMode) {
+                content.style.animation = "showing_dark 400ms linear";
+
+                sun.style.animation = "showing 500ms linear forwards";
+                moon.style.animation = "hiding 500ms linear forwards";
+                link.setAttribute("href", darkPath);
+                main.style.borderLeft = "1px solid #3c4346";
+            }
+
+            this.darkMode = !this.darkMode;
+        },
         showWelcome: function () {
             let main = document.querySelector(".content > main");
 
-            if (this.onChat == null) {
-                main.style.borderLeft = "1px solid #4adf83";
+            if (!this.darkMode) {
+                if (this.onChat == null) {
+                    main.style.borderLeft = "1px solid #4adf83";
+                } else {
+                    main.style.borderLeft = "1px solid #e4e5e6";
+                }
             }
             else {
-                main.style.borderLeft = "1px solid #e4e5e6";
+                main.style.borderLeft = "1px solid #3c4346";
             }
         },
         send: function (refs) {
