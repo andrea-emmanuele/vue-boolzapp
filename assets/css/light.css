@@ -131,6 +131,14 @@ main .body .message.deleted {
     color: #8fa181;
 }
 
+.dropdown {
+    background: #fff;
+}
+
+.dropdown-item:hover {
+    background: #f5f5f5;
+}
+
 /*footer*/
 main footer {
     color: #919191;

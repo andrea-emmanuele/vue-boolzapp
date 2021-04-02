@@ -424,12 +424,14 @@ main .body span.caret-down {
 
 .dropdown {
     position: absolute;
-    background: #fff;
     padding: .5rem 0;
+    border-radius: 3px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26),0 2px 10px 0 rgba(0, 0, 0, .16)
 }
 
 .dropdown-item {
     padding: .5rem 1rem;
+    cursor: pointer;
 }
 
 /*footer*/
@@ -528,6 +530,37 @@ main footer .send-message > .actions {
     100% {
         opacity: 0;
         transform: scale(0, 0);
+    }
+}
+
+.intro-connection-light {
+    animation: bounce 200ms linear;
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(0, 0);
+    }
+    50% {
+        transform: scale(1.2, 1.2);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+.welcome-message, .download-app {
+    animation: appear 300ms linear;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
