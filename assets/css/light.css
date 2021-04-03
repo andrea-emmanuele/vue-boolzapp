@@ -106,12 +106,12 @@ main .body {
     background: url("../img/mine.jpg") repeat;
 }
 
-main .body > .received,
-main .body > .sent {
+main .body .wrapper > .received,
+main .body .wrapper > .sent {
     background: #fff;
 }
 
-main .body > .sent {
+main .body .wrapper > .sent {
     background: #dcf8c6;
 }
 
@@ -119,7 +119,7 @@ main .body .arrow {
     color: #fff;
 }
 
-main .body > .sent > .arrow {
+main .body .wrapper > .sent > .arrow {
     color: #dcf8c6;
 }
 

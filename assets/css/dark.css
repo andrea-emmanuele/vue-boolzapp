@@ -118,27 +118,16 @@ main header .inner-header > span {
 /*body*/
 main .body {
     position: relative;
-    background: #111;
+    background: url("../img/dark-bg.png");
 }
 
-main .body > .dark-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: url("../img/dark-bg.png") repeat;
-    width: 100%;
-    height: 100%;
-    opacity: 0.06;
-    display: flex;
-}
-
-main .body > .received,
-main .body > .sent {
+main .body .wrapper > .received,
+main .body .wrapper > .sent {
     color: #ebebeb;
     background: #262d31;
 }
 
-main .body > .sent {
+main .body .wrapper > .sent {
     background: #056162;
 }
 
@@ -146,7 +135,7 @@ main .body .arrow {
     color: #262d31;
 }
 
-main .body > .sent > .arrow {
+main .body .wrapper > .sent > .arrow {
     color: #056162;
 }
 

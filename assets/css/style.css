@@ -40,7 +40,7 @@ section#root .content > aside {
 }
 
 section#root .content > main {
-    flex: 0 0 70%;
+    flex: 0 1 70%;
     display: flex;
     flex-direction: column;
 }
@@ -336,14 +336,17 @@ main header .actions > span.search {
 /*body*/
 main .body {
     height: calc(100% - 60px - 62px);
-    display: flex;
-    flex-direction: column;
-    padding: .5rem 6rem;
     overflow-y: scroll;
 }
 
-main .body > .received,
-main .body > .sent {
+main .body .wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: .5rem 6rem;
+}
+
+main .body .wrapper > .received,
+main .body .wrapper > .sent {
     position: relative;
     font-size: .85rem;
     width: -moz-fit-content;
@@ -354,16 +357,11 @@ main .body > .sent {
     display: flex;
 }
 
-main .body > .received:last-of-type,
-main .body > .sent:last-of-type {
-    margin-bottom: 2rem;
-}
-
-main .body > .received {
+main .body .wrapper > .received {
     border-radius: 0 5px 5px 5px;
 }
 
-main .body > .sent {
+main .body .wrapper > .sent {
     align-self: flex-end;
     border-radius: 5px 0 5px 5px;
 }
@@ -378,11 +376,11 @@ main .body .arrow > svg{
     width: 8px;
 }
 
-main .body > .received > .arrow {
+main .body .wrapper > .received > .arrow {
     left: -8px;
 }
 
-main .body > .sent > .arrow {
+main .body .wrapper > .sent > .arrow {
     right: -8px;
     transform: rotateY(180deg);
 }
