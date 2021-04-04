@@ -1,12 +1,12 @@
 /* XL */
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1399px) {
     section#root > .content {
         width: 91%;
     }
 }
 
 /* LG */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1199px) {
     main .inner-welcome > .intro {
         font-size: .7rem;
         width: 60%;
@@ -19,7 +19,7 @@
 }
 
 /* MD */
-@media screen and (max-width: 992px) {
+@media screen and (min-width: 768px) and (max-width: 991px) {
     section#root {
         justify-content: unset;
         align-items: unset;
@@ -67,6 +67,7 @@
     }
 
     aside .search-chats > input {
+        color: #fff;
         width: 53%;
         padding: .6rem .6rem .6rem 0;
     }
@@ -81,6 +82,28 @@
         opacity: 0;
     }
 
+    aside .search-chats > input:focus {
+        color: #000;
+        left: 10rem;
+        width: 380px;
+        padding-left: 6.5rem;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    aside #chats > .chat {
+        justify-content: center;
+    }
+
+    aside #chats .chat .inner-chat > .user-photo {
+        padding: unset;
+    }
+
+    aside #chats .chat .inner-chat > .inner-data,
+    aside #chats .chat > span.time {
+        display: none;
+    }
+
     main .inner-welcome > .intro {
         font-size: .7rem;
         width: 60%;
@@ -93,5 +116,37 @@
 
     main .body .wrapper {
         padding: .5rem 2rem;
+    }
+}
+
+/* SM */
+
+@media screen and (max-width: 767px) {
+    section#root {
+        justify-content: unset;
+        align-items: unset;
+    }
+
+    section#root:after {
+        display: none;
+    }
+
+    section#root > .content {
+        width: 100%;
+        display: unset;
+    }
+
+    section#root .content > aside,
+    section#root .content > main {
+        width: 100%;
+        height: 100%;
+    }
+
+    /*section#root .content > aside {
+        display: none;
+    }*/
+
+    section#root .content > main {
+        display: none;
     }
 }
