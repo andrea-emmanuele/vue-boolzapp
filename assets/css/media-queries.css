@@ -142,11 +142,41 @@
         height: 100%;
     }
 
-    /*section#root .content > aside {
-        display: none;
-    }*/
-
     section#root .content > main {
         display: none;
     }
+
+    main header .inner-header > span.back {
+        color: #919191;
+        height: 17px;
+        margin: 0 .5rem 0 0;
+        cursor: pointer;
+    }
+
+    main header .inner-header > span > svg {
+        width: 20px;
+        height: auto;
+    }
+
+    main .body .wrapper {
+        padding: .5rem .5rem;
+    }
+
+    main footer > .actions {
+        flex: 0 0 15%;
+    }
+
+    main footer .actions > span > svg {
+        width: 20px;
+        height: auto;
+    }
+
+    main footer > .send-message {
+        flex: 0 1 82%;
+    }
+
+    main footer .send-message > .actions {
+        flex: 0 0 11%;
+    }
+
 }

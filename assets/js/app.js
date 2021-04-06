@@ -1,6 +1,7 @@
 new Vue({
     el: "#root",
     data: {
+        width: null,
         darkMode: false,
         message: null,
         sent: false,
@@ -29,6 +30,18 @@ new Vue({
         }
     },
     methods: {
+        onMobile: function () {
+            this.width = window.innerWidth;
+
+            if (this.width < 768) {
+                document.querySelector("aside").style.display = "none";
+                document.querySelector("main").style.display = "flex";
+            }
+        },
+        back: function () {
+            document.querySelector("main").style.display = "none";
+            document.querySelector("aside").style.display = "flex";
+        },
         switchMode: function () {
             let content = document.querySelector(".content");
 
@@ -133,6 +146,7 @@ new Vue({
         this.showWelcome();
     },
     updated: function () {
+        this.onMobile();
         this.showWelcome();
         this.received();
     },
